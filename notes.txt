@@ -1,3 +1,5 @@
-In production, I would separate ingestion storage from per-request analysis so the same document is not re-embedded on every query.
+If this were production-grade, I would separate document ingestion from querying. Right now, the demo ingests the document during the same request, which is fine for a short assignment PDF but would become slow for large reports. In production, I would put ingestion into an async background queue so the user does not have to wait while the system extracts text, chunks the document, creates embeddings, and stores vectors in Pinecone.
 
-This raised one product question for me: will KairoPact mainly analyse one-off uploaded documents, or will it need a reusable document store where many users query the same corpus over time?
+I would also make ingestion idempotent using a document hash. This means the system would create a fingerprint of each document and check whether it has already been processed before embedding it again. This would avoid duplicate Pinecone records, reduce API cost, and make repeated uploads safer.
+
+One question this raised for me is whether KairoPact expects this pipeline to be used mainly for one-off report summaries, or for deeper follow-up questioning across multiple organisational assessments over time.
