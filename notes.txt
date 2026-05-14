@@ -1,0 +1,3 @@
+In production, I would separate ingestion storage from per-request analysis so the same document is not re-embedded on every query.
+
+This raised one product question for me: will KairoPact mainly analyse one-off uploaded documents, or will it need a reusable document store where many users query the same corpus over time?

@@ -1,0 +1,7 @@
+KairoPact internal review note
+
+The operations team found that customers received notice of the pricing change two days later than planned. A separate audit also found that several approval events were missing from the export used for regulatory review.
+
+Product and support teams both reported that the underlying issue was not a single outage. Instead, it was a combination of delayed communication, inconsistent record keeping, and unclear ownership over final sign-off.
+
+The team agreed that the immediate risks are customer trust, compliance scrutiny, and repeated confusion if the release process is not tightened before the next rollout.
