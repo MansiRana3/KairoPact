@@ -10,8 +10,8 @@ from app.core.config import get_settings
 settings = get_settings()
 endpoint_url = f"{settings.streamlit_backend_url.rstrip('/')}/v1/analyse-document"
 
-st.set_page_config(page_title="KairoPact Demo", layout="centered")
-st.title("KairoPact Document Analysis Demo")
+st.set_page_config(page_title="KairoPact-assesment", layout="centered")
+st.title("Document Analysis")
 st.write("Upload a TXT or PDF document, ask a question, and inspect the structured JSON response.")
 
 uploaded_file = st.file_uploader("Document", type=["pdf", "txt"])
